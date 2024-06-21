@@ -12,6 +12,7 @@
 name: "CodeQL"
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
@@ -100,6 +101,9 @@ jobs:
         inputSarifFile: ../results/javascript.sarif
         outputSarifFile: ../results/processed.sarif
         githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: aaaaa
+      run: cat ../results/processed.sarif
 
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v3
