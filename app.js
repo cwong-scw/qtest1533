@@ -4,6 +4,7 @@ const port = 3000
 
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/demo/:id', (req, res) => {
+    eval('console.log("something", ' + req.params.id + ')')
     res.send(`Hello Guest`)
 })
 
